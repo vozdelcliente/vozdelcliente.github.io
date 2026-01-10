@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voz del Cliente | Consultoría de Experiencia del Cliente para PyMEs</title>
+    <meta name="description" content="Consultoría especializada en Customer Experience (CX) para empresas en crecimiento. Mystery Shopper, NPS, Customer Journey y estrategias de lealtad.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky blue
+                            600: '#0284c7',
+                            800: '#075985',
+                            900: '#0c4a6e',
+                        },
+                        accent: {
+                            500: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans text-slate-700 bg-white antialiased flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="#" class="flex-shrink-0 flex items-center gap-2 group">
+                    <i class="fa-solid fa-chart-line text-brand-600 text-2xl group-hover:text-brand-700 transition-colors"></i>
+                    <span class="font-serif font-bold text-2xl text-brand-900 tracking-tight group-hover:text-brand-800 transition-colors">Voz del Cliente</span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Inicio</a>
+                    <a href="#servicios" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Servicios</a>
+                    <a href="#metodologia" class="text-slate-600 hover:text-brand-600 font-medium transition-colors">Nosotros</a>
+                    <a href="#contacto" class="bg-brand-600 hover:bg-brand-700 text-white px-5 py-2.5 rounded-lg font-medium transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5">
+                        Agendar Consulta
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-brand-600 focus:outline-none p-2" aria-label="Abrir menú">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#inicio" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-brand-50 hover:text-brand-600 rounded-md font-medium">Inicio</a>
+                <a href="#servicios" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-brand-50 hover:text-brand-600 rounded-md font-medium">Servicios</a>
+                <a href="#metodologia" class="mobile-link block px-3 py-3 text-slate-600 hover:bg-brand-50 hover:text-brand-600 rounded-md font-medium">Nosotros</a>
+                <a href="#contacto" class="mobile-link block px-3 py-3 text-brand-600 font-bold hover:bg-brand-50 rounded-md">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 bg-gradient-to-br from-brand-50 via-white to-slate-50 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-4xl mx-auto">
+                    <span class="inline-block py-1 px-3 rounded-full bg-brand-100 text-brand-800 text-sm font-semibold mb-6 tracking-wide shadow-sm">
+                        CONSULTORÍA CX PARA EMPRESAS EN CRECIMIENTO
+                    </span>
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 leading-tight mb-6">
+                        Transforme la experiencia de sus clientes en <span class="text-brand-600 relative whitespace-nowrap">
+                            rentabilidad
+                            <svg class="absolute w-full h-3 -bottom-1 left-0 text-brand-200 -z-10" viewBox="0 0 100 10" preserveAspectRatio="none">
+                                <path d="M0 5 Q 50 10 100 5" stroke="currentColor" stroke-width="8" fill="none" />
+                            </svg>
+                        </span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                        Ayudamos a PyMEs a entender qué sienten sus clientes, medir su satisfacción y estructurar procesos que generan lealtad a largo plazo.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="#contacto" class="bg-brand-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            <span>Hablemos de su Estrategia</span>
+                            <i class="fas fa-arrow-right text-sm"></i>
+                        </a>
+                        <a href="#servicios" class="bg-white text-slate-700 border border-slate-300 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-slate-50 hover:border-slate-400 transition-all flex items-center justify-center">
+                            Ver Servicios
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Abstract Background Elements -->
+            <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
+            <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
+        </section>
+
+        <!-- Value Proposition -->
+        <section class="py-16 bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                    <div class="p-6 rounded-2xl bg-slate-50 hover:bg-brand-50 transition-colors duration-300">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center text-xl mb-4 mx-auto md:mx-0">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Visibilidad Real</h3>
+                        <p class="text-slate-600">Deje de adivinar qué piensan sus clientes. Obtenemos datos objetivos sobre la realidad de su servicio en cada punto de contacto.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 hover:bg-brand-50 transition-colors duration-300">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center text-xl mb-4 mx-auto md:mx-0">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Ejecución Operativa</h3>
+                        <p class="text-slate-600">No entregamos solo un reporte. Diseñamos planes de acción prácticos que su equipo puede implementar desde el primer día.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-50 hover:bg-brand-50 transition-colors duration-300">
+                        <div class="w-12 h-12 bg-brand-100 text-brand-600 rounded-lg flex items-center justify-center text-xl mb-4 mx-auto md:mx-0">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3">Retorno de Inversión</h3>
+                        <p class="text-slate-600">Convertimos la "experiencia" en métricas de negocio. Mejore la retención, aumente el ticket promedio y reduzca la fuga de clientes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicios" class="py-20 lg:py-28 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-4">Nuestros Servicios</h2>
+                    <p class="text-lg text-slate-600 max-w-2xl mx-auto">Soluciones integrales diseñadas para medir, analizar y optimizar cada interacción con su marca.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service 1 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-100 transition-all">
+                            <i class="fas fa-user-secret"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Mystery Shopper</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Evaluación anónima y detallada de sus estándares de servicio en puntos de venta, call centers y canales digitales. Audite el cumplimiento de sus protocolos.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Auditoría de procesos</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Grabación y evidencia</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Benchmarking competitivo</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 2 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-100 transition-all">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Voz del Cliente (VoC)</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Implementación de sistemas de escucha activa. Medimos la satisfacción y lealtad a través de metodologías probadas como NPS® y CSAT.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Encuestas automatizadas</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Análisis de feedback</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Alertas en tiempo real</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 3 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-100 transition-all">
+                            <i class="fas fa-map-marked-alt"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Customer Journey Map</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Mapeamos el viaje completo de su cliente para identificar puntos de dolor, momentos de la verdad y oportunidades para sorprender.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Blueprint de servicio</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Identificación de fricciones</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Rediseño de experiencias</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 4 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-100 transition-all">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Analítica y Dashboards</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            Centralizamos sus datos de CX. Transformamos hojas de cálculo dispersas en tableros de control visuales para la toma de decisiones gerenciales.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Power BI / Data Studio</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> KPIs unificados</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Reportes ejecutivos</li>
+                        </ul>
+                    </div>
+
+                    <!-- Service 5 -->
+                    <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 border border-slate-100 group">
+                        <div class="w-14 h-14 bg-blue-50 text-brand-600 rounded-full flex items-center justify-center text-2xl mb-6 group-hover:scale-110 group-hover:bg-brand-100 transition-all">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-600 transition-colors">Cultura y Capacitación</h3>
+                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">
+                            La tecnología no sirve sin las personas. Capacitamos a su equipo frontal y líderes en competencias de servicio y cultura centrada en el cliente.
+                        </p>
+                        <ul class="text-sm text-slate-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Talleres prácticos</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Alineación cultural</li>
+                            <li class="flex items-center gap-2"><i class="fas fa-check text-green-500 text-xs"></i> Manuales de servicio</li>
+                        </ul>
+                    </div>
+
+                    <!-- CTA Box -->
+                    <div class="bg-brand-900 rounded-xl shadow-lg p-8 flex flex-col justify-center items-center text-center text-white relative overflow-hidden group">
+                        <div class="absolute inset-0 bg-brand-800 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+                        <div class="relative z-10">
+                            <h3 class="text-2xl font-bold mb-3">¿Necesita una solución a medida?</h3>
+                            <p class="text-brand-100 mb-6 text-sm">Diseñamos propuestas específicas para retail, salud, banca y servicios B2B.</p>
+                            <a href="#contacto" class="inline-block bg-white text-brand-900 hover:bg-brand-50 px-6 py-3 rounded-lg font-bold text-sm transition-colors w-full shadow-md">
+                                Contactar Asesor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About / Methodology -->
+        <section id="metodologia" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div class="order-2 lg:order-1">
+                        <div class="relative">
+                            <div class="absolute inset-0 bg-brand-600 transform rotate-3 rounded-2xl opacity-10"></div>
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=80" alt="Reunión de equipo consultor" class="relative rounded-2xl shadow-lg w-full object-cover h-[500px]">
+                            <div class="absolute -bottom-6 -right-6 bg-white p-6 rounded-xl shadow-xl border border-slate-100 max-w-xs animate-fade-in-up">
+                                <p class="text-brand-900 font-bold text-lg mb-1">7+ Años</p>
+                                <p class="text-slate-600 text-sm">Implementando estrategias de CX en Latinoamérica.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h2 class="text-3xl md:text-4xl font-serif font-bold text-slate-900 mb-6">Más que consultores, somos socios estratégicos</h2>
+                        <p class="text-slate-600 text-lg mb-6 leading-relaxed">
+                            En <strong>Voz del Cliente</strong>, entendemos que para una PyME, cada cliente cuenta. No entregamos "powerpoints" teóricos que se quedan en un cajón. 
+                        </p>
+                        <p class="text-slate-600 text-lg mb-8 leading-relaxed">
+                            Nuestro equipo combina experiencia operativa real en retail, call centers y servicios digitales. Nuestra metodología se basa en tres pilares fundamentales:
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600">
+                                        <span class="font-bold">1</span>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-slate-900">Diagnóstico Basado en Datos</h4>
+                                    <p class="text-slate-600">Medimos la realidad objetiva antes de proponer cambios.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600">
+                                        <span class="font-bold">2</span>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-slate-900">Acción Práctica</h4>
+                                    <p class="text-slate-600">Soluciones operativas viables para su tamaño y presupuesto.</p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="flex-shrink-0">
+                                    <div class="flex items-center justify-center h-10 w-10 rounded-full bg-brand-100 text-brand-600">
+                                        <span class="font-bold">3</span>
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-lg font-bold text-slate-900">Mejora Continua</h4>
+                                    <p class="text-slate-600">Establecemos sistemas para que la excelencia sea constante.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats / Trust -->
+        <section class="py-16 bg-brand-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                    <div class="p-4 hover:bg-brand-800 rounded-lg transition-colors">
+                        <div class="text-4xl font-bold text-brand-100 mb-2">+150</div>
+                        <div class="text-sm text-brand-200">Proyectos Ejecutados</div>
+                    </div>
+                    <div class="p-4 hover:bg-brand-800 rounded-lg transition-colors">
+                        <div class="text-4xl font-bold text-brand-100 mb-2">50k+</div>
+                        <div class="text-sm text-brand-200">Encuestas Analizadas</div>
+                    </div>
+                    <div class="p-4 hover:bg-brand-800 rounded-lg transition-colors">
+                        <div class="text-4xl font-bold text-brand-100 mb-2">12</div>
+                        <div class="text-sm text-brand-200">Industrias Atendidas</div>
+                    </div>
+                    <div class="p-4 hover:bg-brand-800 rounded-lg transition-colors">
+                        <div class="text-4xl font-bold text-brand-100 mb-2">98%</div>
+                        <div class="text-sm text-brand-200">Retención de Clientes</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contacto" class="py-20 lg:py-28 bg-slate-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+                    <div class="grid grid-cols-1 md:grid-cols-5">
+                        <!-- Contact Info -->
+                        <div class="bg-brand-800 p-8 md:col-span-2 text-white flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-2xl font-serif font-bold mb-6">Hablemos</h3>
+                                <p class="text-brand-100 mb-8 text-sm leading-relaxed">
+                                    ¿Listo para profesionalizar la experiencia de sus clientes? Déjenos sus datos y un consultor senior le contactará en menos de 24 horas.
+                                </p>
+                                
+                                <div class="space-y-6">
+                                    <div class="flex items-start gap-4">
+                                        <i class="fas fa-envelope mt-1 text-brand-300"></i>
+                                        <div>
+                                            <p class="text-xs text-brand-300 uppercase font-semibold">Email</p>
+                                            <p class="font-medium">contacto@vozdelcliente.site</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <i class="fas fa-calendar-check mt-1 text-brand-300"></i>
+                                        <div>
+                                            <p class="text-xs text-brand-300 uppercase font-semibold">Horario</p>
+                                            <p class="font-medium">Lun - Vie: 9:00 - 18:00</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start gap-4">
+                                        <i class="fas fa-map-marker-alt mt-1 text-brand-300"></i>
+                                        <div>
+                                            <p class="text-xs text-brand-300 uppercase font-semibold">Región</p>
+                                            <p class="font-medium">Latinoamérica</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mt-12 flex gap-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                                    <i class="fab fa-linkedin-in text-white"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
+                                    <i class="fab fa-whatsapp text-white"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Contact Form -->
+                        <div class="p-8 md:col-span-3">
+                            <!-- IMPORTANT: Replace the action URL with your own from Formspree.io or similar service -->
+                            <form action="https://formspree.io/f/mqakpeag" method="POST" class="space-y-6">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="nombre" class="block text-sm font-medium text-slate-700 mb-1">Nombre</label>
+                                        <input type="text" name="name" id="nombre" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="Su nombre">
+                                    </div>
+                                    <div>
+                                        <label for="empresa" class="block text-sm font-medium text-slate-700 mb-1">Empresa</label>
+                                        <input type="text" name="company" id="empresa" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="Nombre de su empresa">
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1">Email Corporativo</label>
+                                    <input type="email" name="email" id="email" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="nombre@empresa.com">
+                                </div>
+
+                                <div>
+                                    <label for="servicio" class="block text-sm font-medium text-slate-700 mb-1">Interés Principal</label>
+                                    <select name="service" id="servicio" class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all bg-white">
+                                        <option value="" disabled selected>Seleccione una opción</option>
+                                        <option value="mystery">Mystery Shopper</option>
+                                        <option value="nps">Voz del Cliente (NPS/Encuestas)</option>
+                                        <option value="consulting">Consultoría General</option>
+                                        <option value="training">Capacitación</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="mensaje" class="block text-sm font-medium text-slate-700 mb-1">¿Cómo podemos ayudarle?</label>
+                                    <textarea name="message" id="mensaje" rows="4" required class="w-full px-4 py-2 border border-slate-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all" placeholder="Cuéntenos brevemente sobre su desafío actual..."></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-bold py-3 px-6 rounded-lg transition-colors shadow-md">
+                                    Enviar Solicitud
+                                </button>
+                                <p class="text-xs text-slate-400 text-center mt-4">Al enviar, acepta nuestra <a href="privacidad.html" class="underline hover:text-brand-600">Política de Privacidad</a>.</p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center gap-2 mb-4 text-white">
+                        <i class="fa-solid fa-chart-line text-brand-500 text-xl"></i>
+                        <span class="font-serif font-bold text-xl">Voz del Cliente</span>
+                    </div>
+                    <p class="text-sm text-slate-400 mb-4">
+                        Consultoría especializada en transformar la experiencia del cliente en resultados de negocio tangibles para PyMEs en Latinoamérica.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold mb-4">Servicios</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#servicios" class="hover:text-brand-400 transition-colors">Mystery Shopper</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-400 transition-colors">Programas NPS®</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-400 transition-colors">Customer Journey</a></li>
+                        <li><a href="#servicios" class="hover:text-brand-400 transition-colors">Auditoría de Calidad</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Empresa</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#metodologia" class="hover:text-brand-400 transition-colors">Sobre Nosotros</a></li>
+                        <li><a href="#contacto" class="hover:text-brand-400 transition-colors">Contacto</a></li>
+                        <li><a href="privacidad.html" class="hover:text-brand-400 transition-colors">Aviso de Privacidad</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="privacidad.html" class="hover:text-brand-400 transition-colors">Política de Privacidad</a></li>
+                        <li><a href="terminos.html" class="hover:text-brand-400 transition-colors">Términos de Servicio</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+                <p>&copy; 2024 Voz del Cliente. Todos los derechos reservados.</p>
+                <div class="mt-4 md:mt-0">
+                    <p>Diseñado con enfoque en resultados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal Scripts for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-white/95', 'bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.replace('bg-white', 'bg-white/95');
+            }
+        });
+    </script>
+</body>
+</html>
