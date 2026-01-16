@@ -24,7 +24,7 @@
                             900: '#0c4a6e',
                         },
                         accent: {
-                            500: '#f59e0b', // Mostaza/Amber
+                            500: '#f59e0b', // Mostaza/Amber (Mantenido para otros elementos si se requiere, aunque el hero usa azul claro)
                         }
                     },
                     fontFamily: {
@@ -79,39 +79,42 @@
 
     <main class="flex-grow">
         <!-- Hero Section -->
-        <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-50">
+        <section id="inicio" class="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden bg-slate-900">
             <!-- Background Image & Overlay -->
             <div class="absolute inset-0 z-0">
-                <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Oficina moderna" class="w-full h-full object-cover">
-                <!-- Reduced opacity overlay: bg-white/50 instead of 90, and lighter gradient stops -->
-                <div class="absolute inset-0 bg-white/50 bg-gradient-to-b from-white/80 via-white/40 to-white"></div>
+                <!-- Imagen de edificios/corporativa oscura -->
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=2070&q=80" alt="Distrito financiero edificios corporativos" class="w-full h-full object-cover">
+                <!-- Overlay oscuro para contraste - Reducido a 70% para ver más imagen -->
+                <div class="absolute inset-0 bg-slate-900/70 bg-gradient-to-b from-slate-900/80 via-slate-900/70 to-slate-900/60"></div>
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="text-center max-w-4xl mx-auto">
-                    <span class="inline-block py-1 px-3 rounded-full bg-white/80 backdrop-blur-sm border border-brand-100 text-brand-800 text-sm font-semibold mb-6 tracking-wide shadow-sm">
+                    <!-- Pill / Badge -->
+                    <span class="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sky-200 text-sm font-semibold mb-6 tracking-wide shadow-sm">
                         CONSULTORÍA CX PARA EMPRESAS EN CRECIMIENTO
                     </span>
-                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-slate-900 leading-tight mb-6 drop-shadow-sm">
-                        Transformamos la <span class="text-accent-500 underline decoration-accent-500 decoration-4 underline-offset-4">experiencia del cliente</span> en decisiones de negocio claras.
+                    <!-- Main Title: White Text -->
+                    <h1 class="text-4xl md:text-6xl font-serif font-bold text-white leading-tight mb-6 drop-shadow-lg">
+                        Transformamos la <span class="text-accent-500">experiencia del cliente</span> en decisiones de negocio claras.
                     </h1>
-                    <p class="text-lg md:text-xl text-slate-700 font-medium mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-sm">
+                    <!-- Subtitle: Light Gray/Blueish Text -->
+                    <p class="text-lg md:text-xl text-slate-300 font-medium mb-10 max-w-2xl mx-auto leading-relaxed">
                         Ayudamos a PyMEs a entender qué sienten sus clientes, medir su satisfacción y estructurar procesos que generan lealtad a largo plazo.
                     </p>
+                    
+                    <!-- Buttons -->
                     <div class="flex flex-col sm:flex-row justify-center gap-4">
-                        <a href="#contacto" class="bg-brand-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-700 transition-all shadow-lg hover:shadow-brand-500/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
-                            <span>Hablemos de su Estrategia</span>
+                        <a href="#contacto" class="bg-brand-500 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-brand-400 transition-all shadow-lg hover:shadow-brand-500/50 flex items-center justify-center gap-2 transform hover:-translate-y-1 border border-transparent">
+                            <span>Agendar llamada</span>
                             <i class="fas fa-arrow-right text-sm"></i>
                         </a>
-                        <a href="#servicios" class="bg-white/90 backdrop-blur-sm text-slate-700 border border-slate-300 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:border-slate-400 transition-all flex items-center justify-center shadow-sm">
+                        <a href="#servicios" class="bg-transparent text-white border border-white/30 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/10 transition-all flex items-center justify-center backdrop-blur-sm">
                             Ver Servicios
                         </a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Abstract Background Elements (Optional over image) -->
-            <!-- <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div> -->
         </section>
 
         <!-- Value Proposition -->
@@ -479,6 +482,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/573123953650" target="_blank" class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 hover:shadow-xl transition-all duration-300 group" aria-label="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
 
     <!-- Minimal Scripts for Interactivity -->
     <script>
